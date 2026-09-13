@@ -94,7 +94,7 @@ const Navbar = () => {
 
                     <a
                         href="#sign-up"
-                        className="brand-gradient btn min-h-6 h-6 rounded-full border-0 px-2 text-[10px] text-white hover:opacity-90 sm:min-h-8 sm:h-8 sm:btn-sm sm:px-4 sm:text-sm"
+                        className="brand-gradient btn min-h-6 h-6 rounded-md border-0 px-2 text-[10px] text-white hover:opacity-90 sm:min-h-8 sm:h-8 sm:btn-sm sm:px-4 sm:text-sm"
                     >
                         Sign Up
                     </a>

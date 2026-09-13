@@ -27,14 +27,14 @@ const Hero = () => {
                     <div className="mt-7 flex flex-wrap justify-center gap-3 lg:justify-start">
                         <a
                             href="#technologies"
-                            className="brand-gradient btn rounded-full border-0 px-6 text-white shadow-sm hover:opacity-90"
+                            className="brand-gradient btn rounded-md border-0 px-6 text-white shadow-sm hover:opacity-90"
                         >
                             Explore Technologies
                         </a>
 
                         <a
                             href="#about"
-                            className="btn btn-outline rounded-full px-6"
+                            className="btn btn-outline rounded-md px-6"
                         >
                             Learn More
                         </a>
