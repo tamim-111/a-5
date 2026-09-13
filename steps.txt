@@ -3,10 +3,10 @@
 3. Global gradient/theme - Done✔
 4. JSON technology data - Done✔
 5. Navbar- Done✔
-6. Hero/Banner
-7. Technology cards
-8. Your Stack sidebar
-9. Add / Remove functionality
+6. Hero/Banner Done✔
+7. Technology cards Done✔
+8. Your Stack sidebar Done✔
+9. Add / Remove functionality Done✔
 10. React Toastify
 11. Loading state
 12. Footer
