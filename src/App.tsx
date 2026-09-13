@@ -103,17 +103,16 @@ function App() {
         >
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             {/* Section Heading */}
-            <div className="mb-10 text-center">
+            <div className="mb-10 text-center md:text-left">
               <h2 className="text-3xl font-bold sm:text-4xl">
-                Explore{" "}
+                Explore The{" "}
                 <span className="brand-gradient-text">
                   Technologies
                 </span>
               </h2>
 
-              <p className="mx-auto mt-3 max-w-2xl text-sm leading-6 text-base-content/60 sm:text-base">
-                Explore popular technologies and build a
-                stack that fits your next project.
+              <p className="mt-3 text-sm leading-6 text-base-content/60 sm:text-base">
+                Pick one technology per category to build your ideal stack.
               </p>
             </div>
 

@@ -12,68 +12,59 @@ const TechnologyCard = ({
     onAddToStack,
 }: TechnologyCardProps) => {
     return (
-        <article className="card h-full border border-base-300 bg-base-100 shadow-sm transition-shadow hover:shadow-md">
-            <div className="card-body p-5">
-                {/* Icon + Badge */}
-                <div className="flex items-start justify-between gap-4">
-                    <div className="flex h-14 w-14 items-center justify-center rounded-xl bg-base-200 p-3">
-                        <img
-                            src={technology.icon}
-                            alt={`${technology.name} logo`}
-                            className="h-full w-full object-contain"
-                        />
-                    </div>
+        <article className="flex h-full flex-col rounded-2xl border border-slate-200 bg-white p-5 shadow-sm transition-all duration-200 hover:-translate-y-0.5 hover:shadow-md">
+            {/* Top: Icon + Badge */}
+            <div className="flex items-start justify-between">
+                <img
+                    src={technology.icon}
+                    alt={`${technology.name} logo`}
+                    className="h-8 w-8 object-contain"
+                />
 
-                    <span className="badge badge-secondary">
-                        {technology.badge}
-                    </span>
-                </div>
-
-                {/* Technology Name */}
-                <h2 className="card-title mt-3 text-xl">
-                    {technology.name}
-                </h2>
-
-                {/* Description */}
-                <p className="text-sm leading-6 text-base-content/60">
-                    {technology.description}
-                </p>
-
-                {/* Category + Difficulty */}
-                <div className="mt-2 flex flex-wrap items-center gap-2">
-                    <span className="badge badge-outline">
-                        {technology.category}
-                    </span>
-
-                    <span className="badge badge-ghost">
-                        {technology.difficulty}
-                    </span>
-                </div>
-
-                {/* Rating */}
-                <div className="mt-2 flex items-center gap-2">
-                    <span className="text-warning">★</span>
-
-                    <span className="text-sm font-medium">
-                        {technology.rating}
-                    </span>
-                </div>
-
-                {/* Add Button */}
-                <div className="card-actions mt-3">
-                    <button
-                        type="button"
-                        disabled={isAdded}
-                        onClick={() => onAddToStack(technology)}
-                        className={`btn w-full rounded-full ${isAdded
-                                ? "btn-disabled"
-                                : "brand-gradient border-0 text-white hover:opacity-90"
-                            }`}
-                    >
-                        {isAdded ? "✓ Added to Stack" : "Add to Stack"}
-                    </button>
-                </div>
+                <span className="rounded-full border border-sky-100 bg-sky-50 px-3 py-1 text-[11px] font-medium text-sky-500">
+                    {technology.badge}
+                </span>
             </div>
+
+            {/* Technology Name */}
+            <h2 className="mt-4 text-[17px] font-semibold text-slate-900">
+                {technology.name}
+            </h2>
+
+            {/* Description */}
+            <p className="mt-2 min-h-[66px] text-[12px] leading-5 text-slate-500">
+                {technology.description}
+            </p>
+
+            {/* Divider */}
+            <div className="my-4 border-t border-slate-100" />
+
+            {/* Category + Difficulty + Rating */}
+            <div className="flex items-center justify-between gap-2 text-[10px] text-slate-500">
+                <span className="rounded-md bg-slate-50 px-2 py-1">
+                    {technology.category}
+                </span>
+
+                <span>{technology.difficulty}</span>
+
+                <span className="flex items-center gap-1 font-medium text-slate-700">
+                    <span className="text-amber-400">★</span>
+                    {technology.rating}
+                </span>
+            </div>
+
+            {/* Add Button */}
+            <button
+                type="button"
+                disabled={isAdded}
+                onClick={() => onAddToStack(technology)}
+                className={`mt-4 h-9 w-full rounded-lg text-xs font-medium transition-all ${isAdded
+                    ? "cursor-not-allowed bg-slate-300 text-slate-500"
+                    : "bg-slate-950 text-white hover:bg-slate-800 cursor-pointer"
+                    }`}
+            >
+                {isAdded ? "✓ Added to Stack" : "Add to Stack"}
+            </button>
         </article>
     );
 };
