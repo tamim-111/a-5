@@ -1,5 +1,5 @@
-1. Project setup                  ← You're here
-2. Project folder architecture
+1. Project setup - Done✔
+2. Project folder architecture - Done✔
 3. Global gradient/theme
 4. JSON technology data
 5. Navbar
