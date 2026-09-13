@@ -1,6 +1,6 @@
 1. Project setup - Done✔
 2. Project folder architecture - Done✔
-3. Global gradient/theme
+3. Global gradient/theme - Done✔
 4. JSON technology data
 5. Navbar
 6. Hero/Banner
