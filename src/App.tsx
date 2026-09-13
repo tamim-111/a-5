@@ -1,11 +1,17 @@
+// src/App.tsx
 
-const App = () => {
+import Navbar from "./components/Navbar/Navbar";
+
+function App() {
   return (
-    <div>
-      hi
+    <>
+      <Navbar />
 
-    </div>
+      <main className="min-h-screen">
+        {/* Other sections will be added here */}
+      </main>
+    </>
   );
-};
+}
 
 export default App;
