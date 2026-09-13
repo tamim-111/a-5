@@ -9,9 +9,9 @@
 9. Add / Remove functionality Done✔
 10. React Toastify Done✔
 11. Loading state Done✔
-12. Footer
-13. Responsive design
-14. README
-15. Git commits (8+ meaningful commits)
-16. Final assignment checklist
+12. Footer Done✔
+13. Responsive design Done✔
+14. README Done✔
+15. Git commits (8+ meaningful commits) Done✔
+16. Final assignment checklist Done✔
 17. Build + deploy
