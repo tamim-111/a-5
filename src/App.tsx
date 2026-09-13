@@ -1,4 +1,6 @@
 import { useEffect, useState } from "react";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 import Navbar from "./components/Navbar/Navbar";
 import TechnologyGrid from "./components/Technologies/TechnologyGrid";
@@ -12,21 +14,31 @@ function App() {
     []
   );
 
+  const [loading, setLoading] = useState(true);
+
   const [selectedTechnologies, setSelectedTechnologies] =
     useState<Technology[]>([]);
 
   // Load technologies from JSON
   useEffect(() => {
     const loadTechnologies = async () => {
-      const response = await fetch("/data/technologies.json");
+      try {
+        const response = await fetch("/data/technologies.json");
 
-      if (!response.ok) {
-        throw new Error("Failed to load technologies");
+        if (!response.ok) {
+          throw new Error("Failed to load technologies");
+        }
+
+        const data: Technology[] = await response.json();
+
+        setTechnologies(data);
+      } catch (error) {
+        console.error("Failed to load technologies:", error);
+
+        toast.error("Failed to load technologies.");
+      } finally {
+        setLoading(false);
       }
-
-      const data: Technology[] = await response.json();
-
-      setTechnologies(data);
     };
 
     loadTechnologies();
@@ -40,7 +52,7 @@ function App() {
     );
 
     if (alreadyAdded) {
-      alert(`${technology.name} is already in your stack.`);
+      toast.warning(`${technology.name} is already in your stack.`);
       return;
     }
 
@@ -48,26 +60,38 @@ function App() {
       ...currentStack,
       technology,
     ]);
+
+    toast.success(`${technology.name} added to your stack!`);
   };
 
   // Remove one technology
   const handleRemoveFromStack = (technologyId: string) => {
+    const technology = selectedTechnologies.find(
+      (technology) => technology.id === technologyId
+    );
+
     setSelectedTechnologies((currentStack) =>
       currentStack.filter(
         (technology) => technology.id !== technologyId
       )
     );
+
+    if (technology) {
+      toast.info(`${technology.name} removed from your stack.`);
+    }
   };
 
   // Remove all technologies
   const handleRemoveAll = () => {
     setSelectedTechnologies([]);
+
+    toast.success("All technologies removed from your stack.");
   };
 
   return (
     <>
       <Navbar />
-
+      <ToastContainer />
       <main>
         <Hero />
 
@@ -94,11 +118,23 @@ function App() {
 
             {/* Technologies + Stack */}
             <div className="grid grid-cols-1 items-start gap-6 lg:grid-cols-[minmax(0,1fr)_320px]">
-              <TechnologyGrid
-                technologies={technologies}
-                selectedTechnologies={selectedTechnologies}
-                onAddToStack={handleAddToStack}
-              />
+              {loading ? (
+                <div className="flex min-h-80 items-center justify-center">
+                  <div className="flex flex-col items-center gap-3">
+                    <span className="loading loading-spinner loading-lg text-primary"></span>
+
+                    <p className="text-sm text-base-content/60">
+                      Loading technologies...
+                    </p>
+                  </div>
+                </div>
+              ) : (
+                <TechnologyGrid
+                  technologies={technologies}
+                  selectedTechnologies={selectedTechnologies}
+                  onAddToStack={handleAddToStack}
+                />
+              )}
 
               <StackSidebar
                 selectedTechnologies={selectedTechnologies}

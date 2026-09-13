@@ -7,8 +7,8 @@
 7. Technology cards Done✔
 8. Your Stack sidebar Done✔
 9. Add / Remove functionality Done✔
-10. React Toastify
-11. Loading state
+10. React Toastify Done✔
+11. Loading state Done✔
 12. Footer
 13. Responsive design
 14. README
