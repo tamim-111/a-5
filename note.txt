@@ -1,0 +1,17 @@
+1. Project setup                  ← You're here
+2. Project folder architecture
+3. Global gradient/theme
+4. JSON technology data
+5. Navbar
+6. Hero/Banner
+7. Technology cards
+8. Your Stack sidebar
+9. Add / Remove functionality
+10. React Toastify
+11. Loading state
+12. Footer
+13. Responsive design
+14. README
+15. Git commits (8+ meaningful commits)
+16. Final assignment checklist
+17. Build + deploy
