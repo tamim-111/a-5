@@ -8,6 +8,7 @@ import StackSidebar from "./components/Stack/StackSidebar";
 
 import type { Technology } from "./types/technology";
 import Hero from "./components/hero/hero";
+import Footer from "./components/Footer/Footer";
 
 function App() {
   const [technologies, setTechnologies] = useState<Technology[]>(
@@ -145,6 +146,7 @@ function App() {
           </div>
         </section>
       </main>
+      <Footer />
     </>
   );
 }
